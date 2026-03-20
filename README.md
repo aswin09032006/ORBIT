@@ -40,14 +40,16 @@
 
 ## 1 · Executive Summary
 
-**ORBIT** is an **AI-powered, parametric insurance platform** built exclusively for India's **Quick-Commerce (Q-Commerce) delivery partners** - the riders of Zepto, Blinkit, Swiggy Instamart, and similar platforms.
+**ORBIT** is an **AI-powered, hybrid parametric insurance platform** built exclusively for India's **Quick-Commerce (Q-Commerce) delivery partners** (riders of Zepto, Blinkit, Swiggy Instamart).
 
 ### The Core Mission
+Gig workers lack safety nets against **hyper-local, uncontrollable external disruptions**—flash floods, VIP traffic gridlocks, severe smog, and sudden unmapped roadblocks—that steal their working hours. ORBIT provides a **weekly financial safety net** that protects a gig worker's **INCOME** during these events. 
 
-Gig workers lack safety nets against **hyper-local, uncontrollable external disruptions** - flash floods, VIP traffic gridlocks, severe smog - that steal their working hours. **ORBIT** provides a **weekly financial safety net** that protects a gig worker's **INCOME** during these events.
+>[!IMPORTANT]
+> **Scope of Coverage:** This platform strictly covers **Wage/Income Loss** and explicitly **excludes** health, life, accidents, or vehicle repair coverage.
 
-> [!IMPORTANT]
-> **Scope of Coverage:** This platform strictly covers **Wage / Income Loss** and explicitly **excludes** health, life, accidents, or vehicle repair coverage.
+### The Hybrid Claim Engine
+ORBIT operates on a hybrid model. Macro-disruptions (like severe city-wide weather) are **100% automated** with zero touch. However, for unmapped, hyper-local disruptions (like a sudden police barricade), ORBIT features a **Smart Manual Claim** process utilizing a secure, live-geotagged in-app camera to prevent fraud.
 
 ---
 
@@ -57,25 +59,33 @@ Gig workers lack safety nets against **hyper-local, uncontrollable external disr
 
 ---
 
-### Scenario A - *The Micro-Gridlock (Social Disruption)*
+## 2 · Persona-Based Scenarios & Application Workflow
 
+**Target Persona:** Q-Commerce Delivery Partners (10-minute delivery riders operating in high-density urban zones).
+
+### Scenario A - *The Micro-Gridlock (Parametric Auto-Claim)*
 | Stage | Details |
 |---|---|
-| **Context** | Raju is a Blinkit rider in Bengaluru. A sudden, unannounced political rally (VIP movement) causes a severe 2 km traffic gridlock. Raju is trapped for 90 minutes. He hasn't met with an accident, but his **time and income are stolen**. |
-| **Action** | Raju opens the ORBIT app and taps **"File Claim: I am Stuck"**. |
-| **Resolution** | The app instantly queries the **TomTom Live Traffic API** and verifies a severe velocity drop in his exact geohash. To prevent fraud, the app checks his phone's **accelerometer** (verifying micro-vibrations of engine idling) and validates that **4 other insured riders** in his 500 m radius are also stationary (**Swarm Consensus**). |
-| **Outcome** | The claim is **auto-approved**. The AI calculates his projected earnings for that 90-minute Friday window (**₹180**) and locks it in his **Micro-Escrow**. At end-of-shift - once the system verifies he didn't secretly complete the delivery via an alleyway - the ₹180 is instantly transferred to his **UPI**. |
+| **Context** | Raju, a Blinkit rider, is trapped in a severe 2km traffic gridlock caused by a sudden political rally. |
+| **Action** | Raju opens ORBIT and taps **"File Claim: I am Stuck"**. |
+| **Resolution** | The app queries the **TomTom Live Traffic API** validating a severe velocity drop. To prevent GPS spoofing, the app checks his phone's **accelerometer** (verifying micro-vibrations of engine idling) and validates that **4 other insured riders** in his 500m radius are also stationary (**Swarm Consensus**). |
+| **Outcome** | The claim is **auto-approved**. The AI calculates his projected earnings for that 90-minute window (₹180) and locks it in his **Micro-Escrow**. At EOD, if the gig platform confirms he didn't secretly complete the delivery, the ₹180 transfers to his UPI. |
 
----
-
-### Scenario B - *The Flash Flood (Environmental Disruption)*
-
+### Scenario B - *The Flash Flood (Zero-Touch Parametric)*
 | Stage | Details |
 |---|---|
-| **Context** | A sudden torrential downpour floods Sector 44. The Q-Commerce platform pauses operations. |
-| **Action** | **Purely parametric** - no rider action required. The OpenWeather API pushes a **>15 mm/hr** rain alert for Sector 44. |
+| **Context** | A sudden torrential downpour floods Sector 44. |
+| **Action** | **Purely parametric**—no rider action required. OpenWeather API pushes a **>15mm/hr** rain alert. |
 | **Resolution** | The ORBIT backend **automatically triggers** an income-loss event for all active riders geofenced in Sector 44. |
-| **Outcome** | **No manual claim needed.** Riders are automatically compensated based on their **AI Yield Curve** for the hours the zone remains red-flagged. |
+| **Outcome** | Riders are automatically compensated based on their **AI Yield Curve** for the hours the zone remains red-flagged. |
+
+### Scenario C - *The Unmapped Roadblock (Smart Manual Claim)*
+| Stage | Details |
+|---|---|
+| **Context** | A fallen tree or localized protest completely blocks the delivery route. This event is too small/sudden to appear on TomTom or weather APIs. |
+| **Action** | The rider taps **"File Claim: Unmapped Disruption"**. Because external APIs cannot verify this, ORBIT instantly opens a **Secure In-App Camera** (disabling gallery uploads). |
+| **Resolution** | The rider captures a **Live Geotagged Photo** of the barricade/tree. The app embeds exact GPS coordinates, timestamp, and device telemetry directly into the image metadata. |
+| **Outcome** | Backend Vision AI (or Admin review) validates the proof. The AI Yield Curve calculates the lost time, locking funds into the Micro-Escrow. |
 
 ---
 
@@ -240,35 +250,29 @@ graph TD
 
 ---
 
-## 🚨 Adversarial Defense & Anti-Spoofing Strategy
-*Response to the DEVTrails Phase 1 Critical Threat Report.*
+## 🚨 URGENT: Adversarial Defense & Anti-Spoofing Strategy
+*(Response to the DEVTrails Phase 1 Critical Threat Report)*
 
-To combat coordinated "Telegram Syndicates" exploiting parametric platforms via advanced GPS spoofing, ORBIT shifts the paradigm from **Location Trust** to **Physical State Verification**. Simple GPS coordinates are easily manipulated; physics is not. 
-
-Here is how our AI/ML architecture actively dismantles coordinated fraud rings without penalizing honest workers:
+To combat coordinated **Telegram Syndicates** exploiting parametric platforms via advanced GPS spoofing, ORBIT shifts the paradigm from **Location Trust** to **Physical State Verification**. Simple GPS coordinates are easily manipulated; physics is not. 
 
 ### 1. The Differentiation: AI vs. The Spoofing Syndicate
-A bad actor resting at home with a GPS spoofer has a fundamentally different physical and digital footprint than a genuine rider trapped in a storm or gridlock. 
-*   **The Physics of Disruption:** Our **Adaptive Sensor Fusion AI** analyzes real-time hardware telemetry. A rider on a bike in a storm experiences micro-vibrations (engine idling, shivering, wind buffeting) and atmospheric pressure drops. A spoofer at home sitting on a sofa outputs a perfectly flat, zero-vibration accelerometer timeline.
-*   **The Swarm Anomaly:** If 500 riders suddenly claim they are stuck in Zone A, but our mock Gig Platform API indicates that *non-syndicate* riders are actively completing deliveries in Zone A at normal speeds, our **Swarm Consensus Engine** flags the localized spike as a coordinated bot/syndicate attack and instantly freezes auto-payouts for that geohash.
+A bad actor resting at home with a GPS spoofer has a fundamentally different physical/digital footprint than a genuine rider trapped in a storm. 
+*   **The Physics of Disruption:** Our **Adaptive Sensor Fusion AI** analyzes real-time hardware telemetry. A rider in a storm experiences micro-vibrations and atmospheric pressure drops. A spoofer at home outputs a perfectly flat, zero-vibration accelerometer timeline.
+*   **The Swarm Anomaly:** If 500 riders suddenly claim they are stuck in Zone A, but our mock Gig Platform API indicates that *non-syndicate* riders are actively completing deliveries in Zone A, our **Swarm Consensus Engine** flags the localized spike as a bot attack and freezes auto-payouts for that geohash.
 
 ### 2. The Data: Multi-Dimensional Telemetry (Beyond GPS)
-To detect a fraud ring, our ML model evaluates a matrix of data points that fake GPS apps cannot simulate:
+Our ML model evaluates a matrix of data points fake GPS apps cannot simulate:
+*   **Micro-Drift (GPS):** Genuine GPS naturally bounces; spoofed GPS is suspiciously static (0.0000 m/s) or snaps to points.
+*   **Device Hardware:** Genuine accelerometer shows vehicular jitter; spoofer accelerometer is dead flat, and phone is likely in a "charging state."
+*   **Temporal Clustering:** Genuine claims roll in organically; syndicate claims trigger hundreds of times simultaneously milliseconds after a Telegram broadcast.
 
-| Telemetry Vector | Genuine Stranded Rider | Syndicate Spoofer (At Home) |
-| :--- | :--- | :--- |
-| **Micro-Drift (GPS)** | Natural variance (satellite bouncing off buildings/clouds). | Suspiciously static (exactly 0.0000 m/s) or snapping to points. |
-| **Network State** | Cellular handoffs, high ping/jitter due to storm/crowds. | Stable Wi-Fi connection, masked IP, or VPN routing. |
-| **Device Hardware** | Accelerometer shows vehicular jitter; battery is draining. | Accelerometer is flat; phone is likely plugged in (charging state). |
-| **Temporal Clustering** | Claims roll in organically as riders hit the disruption. | Hundreds of claims trigger simultaneously (milliseconds after a Telegram broadcast). |
+### 3. The UX Balance: The "Secure Proof of Environment"
+What if a genuine rider takes shelter inside a concrete building, causing GPS drift and deadening sensor telemetry? We must not unjustly ban them.
+*   **Graceful Degradation (Smart Manual Claim Fallback):** If our ML flags a claim as *Suspicious*, the UI dynamically shifts from "Zero-Touch" to "Verification Mode."
+*   **The Action:** The app prompts: *"Telemetry unusual. To unlock your Micro-Escrow, please capture a live photo of the disruption."*
+*   **The Security Layer:** The ORBIT app forces the use of a **Secure In-App Camera** that strictly blocks uploads from the phone's gallery (preventing the syndicate from uploading downloaded photos of floods). The captured photo is cryptographically stamped with the live geohash, timestamp, and accelerometer state.
+*   **The Result:** The honest rider easily snaps a photo of the flooded street, and the AI Vision model verifies it. The spoofer sitting in their bedroom is instantly defeated. Furthermore, our **Micro-Escrow** prevents the syndicate from instantly draining the liquidity pool.
 
-### 3. The UX Balance: Protecting the Honest Worker
-What if a genuine rider takes shelter inside a concrete cafe during a flood? Their GPS might drop, and their accelerometer will go quiet. We must not unjustly ban them.
-
-*   **Graceful Degradation (The "Proof of Environment" Fallback):** If our ML flags a claim as *Suspicious* due to conflicting telemetry (e.g., GPS says flooded, but sensors are quiet), we do not reject it. Instead, the UI dynamically shifts from "Zero-Touch" to "Verification Mode."
-*   **The Action:** The app prompts the rider: *"Network conditions are unusual. To unlock your Micro-Escrow instantly, please capture a quick 3-second live video of the disruption."*
-*   **The Result:** The honest rider easily films the flooded street outside the cafe, and the AI vision/admin approves it. The spoofer sitting in their bedroom is instantly defeated, as they cannot produce a live video of a storm. 
-*   **The Escrow Buffer:** Because ORBIT utilizes a **Micro-Escrow** (holding funds until End-of-Day reconciliation), the syndicate cannot "drain the liquidity pool instantly." The platform retains the leverage to reverse flagged payouts if the Gig API confirms the rider completed their shift normally.
 
 ---
 
