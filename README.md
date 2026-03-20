@@ -154,33 +154,33 @@ ORBIT calculates **actual income loss** (not fixed payouts)
 
 ---
 
-## 📊 Simple Summary (For Riders)
+## Simple Summary (For Riders)
 
-### 💵 You Pay
+### You Pay
 - Around **₹20–₹30 per week**
 
-### 💰 You Receive
+### You Receive
 
 | Situation | Outcome |
 |----------|--------|
 | No disruption | ₹0 (like normal insurance) |
 | Disruption occurs | ₹100 – ₹800+ |
 
-👉 Depends on:
+Depends on:
 - Time of day  
 - Duration of disruption  
 - Your earning pattern  
 
 ---
 
-## 🔁 Real Weekly Scenarios
+## Real Weekly Scenarios
 
 ### 📉 Week 1 (No Issues)
 - Premium paid: ₹25  
 - No disruption  
 
-👉 **Payout: ₹0**  
-👉 Rider loss: ₹25 (small predictable cost)
+**Payout: ₹0**  
+Rider loss: ₹25 (small predictable cost)
 
 ---
 
@@ -191,16 +191,34 @@ ORBIT calculates **actual income loss** (not fixed payouts)
 #### Calculation:
 - ₹250/hr × 3 hours = ₹750  
 
-👉 **Payout: ₹750**
+**Payout: ₹750**
 
 ---
 
-## ⚖️ Why This Feels Fair
+## Why This Feels Fair
 
 ✔ Not random payouts  
 ✔ Based on your actual earnings  
 ✔ Higher earners → higher protection  
 ✔ Peak hours → higher compensation  
+
+---
+
+## 🔴 CRITICAL SYSTEM CONDITIONS (Business Guardrails)
+
+To protect ORBIT's business model and liquidity pool, payouts are subject to strict, non-optional smart-contract rules:
+
+1. **Minimum Activity Condition:** Payouts *only trigger* if the rider was actively logged in and delivering for the **last 30–60 minutes** prior to the disruption.
+
+2. **Waiting Period (Anti-Adverse Selection):** Coverage strictly starts **24 hours after premium payment**. This prevents riders from downloading the app and joining right before a forecasted storm.
+
+3. **Cooldown Between Claims:** A mandatory **2-hour gap** is enforced between consecutive payouts for the same rider to prevent chain-triggering.
+
+4. **Multi-Signal Validation:** Payouts *never rely* on 1 signal. We enforce tripartite consensus: **External API Data + Gig Platform `Trip_State` + On-Device Behavioral Telemetry**.
+
+5. **Dynamic Risk Pricing Feedback:** If a rider claims frequently (higher statistical risk), their profile updates and their **next week's premium automatically increases**.
+
+6. **Financial Caps:** Minimum payout threshold = **₹100** (avoids micro-transactions). Max payout cap = **₹2000/week** (protects business from extreme loss).
 
 ### The User Journey
 
