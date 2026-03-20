@@ -105,21 +105,21 @@ Gig workers operate on **weekly payout cycles**. Our financial model is strictly
 
 ## 🧭 How ORBIT Insurance Works (End-to-End)
 
-### 👤 Step 1: Rider Joins
+### Step 1: Rider Joins
 - Signs up in the ORBIT app  
 - Links:
   - Delivery platform (earnings data)
   - UPI AutoPay  
 
-👉 System learns the rider’s **earning pattern**
+System learns the rider’s **earning pattern**
 
 ---
 
-### 💸 Step 2: Weekly Premium *(What the Rider Pays)*
+### Step 2: Weekly Premium *(What the Rider Pays)*
 
 Every Sunday night → auto deduction
 
-#### 💰 Example Premium Breakdown
+#### Example Premium Breakdown
 
 | Component | Amount |
 |----------|--------|
@@ -128,11 +128,11 @@ Every Sunday night → auto deduction
 | Weather risk (rain/heat forecast) | +₹3 |
 | Loyalty discount | −₹3 |
 
-👉 **Total Weekly Premium ≈ ₹25**
+**Total Weekly Premium ≈ ₹25**
 
 ---
 
-### 🧠 Step 3: AI Builds Earnings Curve
+### Step 3: AI Builds Earnings Curve
 
 The system predicts how much the rider usually earns:
 
@@ -142,11 +142,11 @@ The system predicts how much the rider usually earns:
 | Fri | 7–10 PM | ₹300/hr |
 | Sun | Lunch | ₹250/hr |
 
-👉 This becomes the rider’s **income map**
+This becomes the rider’s **income map**
 
 ---
 
-### ⚠️ Step 4: Disruption Happens
+### Step 4: Disruption Happens
 
 **Example:**
 - Heavy rain in rider’s area  
@@ -159,16 +159,16 @@ System detects:
 
 ---
 
-### 💰 Step 5: Payout *(What the Rider Receives)*
+### Step 5: Payout *(What the Rider Receives)*
 
 ORBIT calculates **actual income loss** (not fixed payouts)
 
-#### 📊 Example Calculation
+#### Example Calculation
 
 - Expected earning: ₹300/hr  
 - Lost time: 2 hours  
 
-👉 **Payout = ₹600**
+**Payout = ₹600**
 
 ✔ Instantly credited via UPI  
 
