@@ -103,7 +103,7 @@ Gig workers operate on **weekly payout cycles**. Our financial model is strictly
 
 ---
 
-## 3 · 🧭 How ORBIT Insurance Works (End-to-End)
+## 🧭 How ORBIT Insurance Works (End-to-End)
 
 ### 👤 Step 1: Rider Joins
 - Signs up in the ORBIT app  
