@@ -83,6 +83,26 @@ ORBIT operates on a hybrid model. Macro-disruptions (like severe city-wide weath
 
 ---
 
+## 3 · The Weekly Premium Model & The "Yield Curve"
+
+Gig workers operate on **weekly payout cycles**. Our financial model is strictly aligned with a **Weekly Pricing Cycle**, calculated dynamically every **Sunday** using AI.
+
+### 🧠 The AI Yield Curve
+
+> Standard insurance pays a flat rate. Our ML model analyzes a rider's **historical earnings** to generate an **Expected Earnings Curve** - predicting, for example, that they earn ₹150/hr on Tuesday afternoons but **₹300/hr** on Friday nights. When a disruption occurs, ORBIT pays the **exact area under the curve** for the lost time.
+
+### 💵 Dynamic Weekly Premium Calculation
+
+| Component | Amount | Logic |
+|---|---|---|
+| **Base Premium** | ₹20 / week | Flat weekly contribution for minimum coverage. |
+| **Zone Volatility Risk** | +₹5 | Applied if the rider's primary geofence is historically prone to waterlogging or traffic gridlocks. |
+| **Weather Forecast Risk** | +₹3 | Applied if IMD predicts extreme heat or rain for the upcoming week. |
+| **Loyalty Adjustment** | −10% | Discount for top-tier, consistently active riders. |
+| **Collection** | - | Automatically deducted via **UPI Auto-Pay** mandate every Sunday night. |
+
+---
+
 ## 3 · 🧭 How ORBIT Insurance Works (End-to-End)
 
 ### 👤 Step 1: Rider Joins
@@ -223,26 +243,6 @@ To protect ORBIT's business model and liquidity pool, payouts are subject to str
 ### The User Journey
 
 <img src="./assets/workflow.png" alt="Insurance End-to-end workflow"/>
-
----
-
-## 3 · The Weekly Premium Model & The "Yield Curve"
-
-Gig workers operate on **weekly payout cycles**. Our financial model is strictly aligned with a **Weekly Pricing Cycle**, calculated dynamically every **Sunday** using AI.
-
-### 🧠 The AI Yield Curve
-
-> Standard insurance pays a flat rate. Our ML model analyzes a rider's **historical earnings** to generate an **Expected Earnings Curve** - predicting, for example, that they earn ₹150/hr on Tuesday afternoons but **₹300/hr** on Friday nights. When a disruption occurs, ORBIT pays the **exact area under the curve** for the lost time.
-
-### 💵 Dynamic Weekly Premium Calculation
-
-| Component | Amount | Logic |
-|---|---|---|
-| **Base Premium** | ₹20 / week | Flat weekly contribution for minimum coverage. |
-| **Zone Volatility Risk** | +₹5 | Applied if the rider's primary geofence is historically prone to waterlogging or traffic gridlocks. |
-| **Weather Forecast Risk** | +₹3 | Applied if IMD predicts extreme heat or rain for the upcoming week. |
-| **Loyalty Adjustment** | −10% | Discount for top-tier, consistently active riders. |
-| **Collection** | - | Automatically deducted via **UPI Auto-Pay** mandate every Sunday night. |
 
 ---
 
