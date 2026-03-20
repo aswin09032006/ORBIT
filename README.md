@@ -19,8 +19,8 @@
 </p>
 
 <p align="center">
-  <a href="#"><strong>📂 Repository</strong></a> &nbsp;·&nbsp;
-  <a href="#"><strong>🎬 Phase 1 Pitch Video</strong></a>
+  <a href="https://github.com/aswin09032006/ORBIT"><strong>📂 Repository</strong></a> &nbsp;·&nbsp;
+  <a href="./assets/prototype.mp4"><strong>🎬 Phase 1 Prototype Video</strong></a>
 </p>
 
 ---
@@ -151,7 +151,22 @@ Uses **local device sensors** to prevent GPS spoofing:
 - Post-claim, AI continuously monitors **GPS velocity**.
 - Sustained forward movement (20–30 km/h) toward the destination → **payout auto-halted**.
 
+### 🔒 Real-World Threat Response
+
+Just today, the DEVTrails team warned us about Telegram syndicates using GPS spoofers to drain liquidity pools. **Simple GPS is dead — but ORBIT is ready.**
+
+Because we use **hardware-level Sensor Fusion** to detect the *physical micro-vibrations* of a bike, combined with **temporal clustering** to identify coordinated claim spikes, a spoofer sitting on their sofa is instantly flagged.
+
+And if there is a false positive?
+
+Our graceful UX simply asks the rider for a **3-second live video of the disruption**.
+
+👉 The honest worker gets paid.  
+🚫 The syndicate gets blocked.  
+🛡️ The liquidity pool remains secure.
+
 ---
+
 
 ## 7 · Technical Architecture
 
@@ -204,6 +219,12 @@ graph TD
 
 ---
 
+<p align="center">
+    <img src="./assets/prototype.gif" alt="ORBIT App Prototype Demo" width="300">
+</p>
+
+---
+
 ## 8 · Tech Stack & Development Plan
 
 ### 🧰 Tech Stack
@@ -219,14 +240,46 @@ graph TD
 
 ---
 
+## 🚨 Adversarial Defense & Anti-Spoofing Strategy
+*Response to the DEVTrails Phase 1 Critical Threat Report.*
+
+To combat coordinated "Telegram Syndicates" exploiting parametric platforms via advanced GPS spoofing, ORBIT shifts the paradigm from **Location Trust** to **Physical State Verification**. Simple GPS coordinates are easily manipulated; physics is not. 
+
+Here is how our AI/ML architecture actively dismantles coordinated fraud rings without penalizing honest workers:
+
+### 1. The Differentiation: AI vs. The Spoofing Syndicate
+A bad actor resting at home with a GPS spoofer has a fundamentally different physical and digital footprint than a genuine rider trapped in a storm or gridlock. 
+*   **The Physics of Disruption:** Our **Adaptive Sensor Fusion AI** analyzes real-time hardware telemetry. A rider on a bike in a storm experiences micro-vibrations (engine idling, shivering, wind buffeting) and atmospheric pressure drops. A spoofer at home sitting on a sofa outputs a perfectly flat, zero-vibration accelerometer timeline.
+*   **The Swarm Anomaly:** If 500 riders suddenly claim they are stuck in Zone A, but our mock Gig Platform API indicates that *non-syndicate* riders are actively completing deliveries in Zone A at normal speeds, our **Swarm Consensus Engine** flags the localized spike as a coordinated bot/syndicate attack and instantly freezes auto-payouts for that geohash.
+
+### 2. The Data: Multi-Dimensional Telemetry (Beyond GPS)
+To detect a fraud ring, our ML model evaluates a matrix of data points that fake GPS apps cannot simulate:
+
+| Telemetry Vector | Genuine Stranded Rider | Syndicate Spoofer (At Home) |
+| :--- | :--- | :--- |
+| **Micro-Drift (GPS)** | Natural variance (satellite bouncing off buildings/clouds). | Suspiciously static (exactly 0.0000 m/s) or snapping to points. |
+| **Network State** | Cellular handoffs, high ping/jitter due to storm/crowds. | Stable Wi-Fi connection, masked IP, or VPN routing. |
+| **Device Hardware** | Accelerometer shows vehicular jitter; battery is draining. | Accelerometer is flat; phone is likely plugged in (charging state). |
+| **Temporal Clustering** | Claims roll in organically as riders hit the disruption. | Hundreds of claims trigger simultaneously (milliseconds after a Telegram broadcast). |
+
+### 3. The UX Balance: Protecting the Honest Worker
+What if a genuine rider takes shelter inside a concrete cafe during a flood? Their GPS might drop, and their accelerometer will go quiet. We must not unjustly ban them.
+
+*   **Graceful Degradation (The "Proof of Environment" Fallback):** If our ML flags a claim as *Suspicious* due to conflicting telemetry (e.g., GPS says flooded, but sensors are quiet), we do not reject it. Instead, the UI dynamically shifts from "Zero-Touch" to "Verification Mode."
+*   **The Action:** The app prompts the rider: *"Network conditions are unusual. To unlock your Micro-Escrow instantly, please capture a quick 3-second live video of the disruption."*
+*   **The Result:** The honest rider easily films the flooded street outside the cafe, and the AI vision/admin approves it. The spoofer sitting in their bedroom is instantly defeated, as they cannot produce a live video of a storm. 
+*   **The Escrow Buffer:** Because ORBIT utilizes a **Micro-Escrow** (holding funds until End-of-Day reconciliation), the syndicate cannot "drain the liquidity pool instantly." The platform retains the leverage to reverse flagged payouts if the Gig API confirms the rider completed their shift normally.
+
+---
+
 ### 🗓️ 6-Week Execution Timeline
 
 #### Phase 1 - Foundation & Strategy *(Current → March 20)*
 
 - [x] Define core architecture, persona logic, and Yield Curve mathematics.
 - [x] Draft detailed requirement documentation *(this README)*.
-- [ ] Create minimal UI/UX flow diagrams for the Q-Commerce persona.
-- [ ] Record the 2-minute strategy pitch video.
+- [x] Create minimal UI/UX flow diagrams for the Q-Commerce persona.
+- [x] Record the 2-minute strategy pitch video.
 
 #### Phase 2 - Core Automation & API Mocks *(March 21 → April 4)*
 
