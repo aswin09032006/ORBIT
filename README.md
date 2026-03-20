@@ -20,7 +20,7 @@
 
 <p align="center">
   <a href="https://github.com/aswin09032006/ORBIT"><strong>📂 Repository</strong></a> &nbsp;·&nbsp;
-  <a href="./assets/prototype.mp4"><strong>🎬 Phase 1 Prototype Video</strong></a>
+  <a href="https://drive.google.com/file/d/16gQw3vn_Ns8G7PlmkEBDciPMOxrnyTEJ/view?usp=sharing"><strong>🎬 Phase 1 Prototype Video</strong></a>
 </p>
 
 ---
