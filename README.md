@@ -55,12 +55,6 @@ ORBIT operates on a hybrid model. Macro-disruptions (like severe city-wide weath
 
 ## 2 · Persona-Based Scenarios & Application Workflow
 
-**Target Persona:** Q-Commerce Delivery Partners - 10-minute delivery riders operating in high-density urban zones (Bengaluru, Delhi, Mumbai).
-
----
-
-## 2 · Persona-Based Scenarios & Application Workflow
-
 **Target Persona:** Q-Commerce Delivery Partners (10-minute delivery riders operating in high-density urban zones).
 
 ### Scenario A - *The Micro-Gridlock (Parametric Auto-Claim)*
@@ -86,6 +80,131 @@ ORBIT operates on a hybrid model. Macro-disruptions (like severe city-wide weath
 | **Action** | The rider taps **"File Claim: Unmapped Disruption"**. Because external APIs cannot verify this, ORBIT instantly opens a **Secure In-App Camera** (disabling gallery uploads). |
 | **Resolution** | The rider captures a **Live Geotagged Photo** of the barricade/tree. The app embeds exact GPS coordinates, timestamp, and device telemetry directly into the image metadata. |
 | **Outcome** | Backend Vision AI (or Admin review) validates the proof. The AI Yield Curve calculates the lost time, locking funds into the Micro-Escrow. |
+
+---
+
+## 3 · 🧭 How ORBIT Insurance Works (End-to-End)
+
+### 👤 Step 1: Rider Joins
+- Signs up in the ORBIT app  
+- Links:
+  - Delivery platform (earnings data)
+  - UPI AutoPay  
+
+👉 System learns the rider’s **earning pattern**
+
+---
+
+### 💸 Step 2: Weekly Premium *(What the Rider Pays)*
+
+Every Sunday night → auto deduction
+
+#### 💰 Example Premium Breakdown
+
+| Component | Amount |
+|----------|--------|
+| Base premium | ₹20 |
+| Zone risk (flood/traffic area) | +₹5 |
+| Weather risk (rain/heat forecast) | +₹3 |
+| Loyalty discount | −₹3 |
+
+👉 **Total Weekly Premium ≈ ₹25**
+
+---
+
+### 🧠 Step 3: AI Builds Earnings Curve
+
+The system predicts how much the rider usually earns:
+
+| Day | Time | Expected Earnings |
+|-----|------|------------------|
+| Mon | 2–4 PM | ₹120/hr |
+| Fri | 7–10 PM | ₹300/hr |
+| Sun | Lunch | ₹250/hr |
+
+👉 This becomes the rider’s **income map**
+
+---
+
+### ⚠️ Step 4: Disruption Happens
+
+**Example:**
+- Heavy rain in rider’s area  
+- Time: **Friday 8–10 PM (peak hours)**  
+
+System detects:
+- Weather API trigger  
+- Traffic slowdown  
+- Rider inactive due to disruption  
+
+---
+
+### 💰 Step 5: Payout *(What the Rider Receives)*
+
+ORBIT calculates **actual income loss** (not fixed payouts)
+
+#### 📊 Example Calculation
+
+- Expected earning: ₹300/hr  
+- Lost time: 2 hours  
+
+👉 **Payout = ₹600**
+
+✔ Instantly credited via UPI  
+
+---
+
+## 📊 Simple Summary (For Riders)
+
+### 💵 You Pay
+- Around **₹20–₹30 per week**
+
+### 💰 You Receive
+
+| Situation | Outcome |
+|----------|--------|
+| No disruption | ₹0 (like normal insurance) |
+| Disruption occurs | ₹100 – ₹800+ |
+
+👉 Depends on:
+- Time of day  
+- Duration of disruption  
+- Your earning pattern  
+
+---
+
+## 🔁 Real Weekly Scenarios
+
+### 📉 Week 1 (No Issues)
+- Premium paid: ₹25  
+- No disruption  
+
+👉 **Payout: ₹0**  
+👉 Rider loss: ₹25 (small predictable cost)
+
+---
+
+### 🌧 Week 2 (Disruption Happens)
+- Premium paid: ₹28  
+- Flood causes 3-hour loss during peak time  
+
+#### Calculation:
+- ₹250/hr × 3 hours = ₹750  
+
+👉 **Payout: ₹750**
+
+---
+
+## ⚖️ Why This Feels Fair
+
+✔ Not random payouts  
+✔ Based on your actual earnings  
+✔ Higher earners → higher protection  
+✔ Peak hours → higher compensation  
+
+### The User Journey
+
+<img src="./assets/workflow.png" alt="Insurance End-to-end workflow"/>
 
 ---
 
